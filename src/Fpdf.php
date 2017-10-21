@@ -79,6 +79,8 @@ class Fpdf
 	public $AliasNbPages;       //alias for total number of pages
 	public $PDFVersion;         //PDF version number
 
+	public $FpdfVersion = '1.5.3-Custom';
+
 	/*******************************************************************************
 	*                                                                              *
 	*                               Public methods                                 *
@@ -1361,7 +1363,7 @@ class Fpdf
 
 	function _putinfo()
 	{
-		$this->_out('/Producer '.$this->_textstring('FPDF '.FPDF_VERSION));
+		$this->_out('/Producer '.$this->_textstring('FPDF '.$this->FpdfVersion));
 		if(!empty($this->title))
 			$this->_out('/Title '.$this->_textstring($this->title));
 		if(!empty($this->subject))
